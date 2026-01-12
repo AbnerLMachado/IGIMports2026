@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estratégia de Produtos 2026 - IG Imports</title>
+    <style>
+        :root {
+            --color-primary: #6366f1;
+            --color-secondary: #8b5cf6;
+            --color-accent: #ec4899;
+            --color-success: #10b981;
+            --color-warning: #f59e0b;
+            --color-danger: #ef4444;
+            --color-info: #0ea5e9;
+            --color-bg: #f8fafc;
+            --color-surface: #ffffff;
+            --color-border: #e2e8f0;
+            --color-text: #1e293b;
+            --color-text-light: #64748b;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 0.95rem;
+            opacity: 0.95;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* DASHBOARD CARDS */
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .dashboard-card {
+            background: var(--color-surface);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-primary);
+        }
+
+        .dashboard-card h3 {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .dashboard-card .value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .dashboard-card .subtitle {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+        }
+
+        /* PRINCÍPIO 2026 - DESTAQUE */
+        .principle-card {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1) 0%, rgba(139,92,246,0.1) 100%);
+            border: 2px solid var(--color-primary);
+            padding: 2rem;
+            border-radius: var(--radius);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .principle-card::before {
+            content: "🔑";
+            font-size: 2rem;
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+        }
+
+        .principle-card h2 {
+            color: var(--color-primary);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .principle-card p {
+            color: var(--color-text);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        /* ABAS */
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--color-border);
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 1rem 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--color-text-light);
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .tab-btn:hover {
+            color: var(--color-primary);
+        }
+
+        .tab-btn.active {
+            color: var(--color-primary);
+            border-bottom-color: var(--color-primary);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* TABELAS */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--color-surface);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 2rem;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+        }
+
+        th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--color-border);
+            font-size: 0.9rem;
+        }
+
+        tbody tr:hover {
+            background-color: rgba(99,102,241,0.05);
+            transition: var(--transition);
+        }
+
+        /* BADGES */
+        .badge {
+            display: inline-block;
+            padding: 0.35rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .badge-primary {
+            background-color: rgba(99,102,241,0.2);
+            color: #4f46e5;
+        }
+
+        .badge-success {
+            background-color: rgba(16,185,129,0.2);
+            color: #059669;
+        }
+
+        .badge-warning {
+            background-color: rgba(245,158,11,0.2);
+            color: #d97706;
+        }
+
+        .badge-danger {
+            background-color: rgba(239,68,68,0.2);
+            color: #dc2626;
+        }
+
+        .badge-info {
+            background-color: rgba(14,165,233,0.2);
+            color: #0284c7;
+        }
+
+        /* ACORDEÕES */
+        .accordion {
+            margin-bottom: 1.5rem;
+        }
+
+        .accordion-item {
+            border: 1px solid var(--color-border);
+            margin-bottom: 0.5rem;
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            background: linear-gradient(135deg, rgba(99,102,241,0.05) 0%, rgba(139,92,246,0.05) 100%);
+            padding: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            width: 100%;
+            text-align: left;
+            color: var(--color-text);
+            font-size: 0.95rem;
+        }
+
+        .accordion-header:hover {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1) 0%, rgba(139,92,246,0.1) 100%);
+        }
+
+        .accordion-header.active {
+            color: var(--color-primary);
+            background: linear-gradient(135deg, rgba(99,102,241,0.15) 0%, rgba(139,92,246,0.15) 100%);
+        }
+
+        .accordion-icon {
+            transition: transform 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-content.active {
+            max-height: 500px;
+        }
+
+        .accordion-body {
+            padding: 1.5rem;
+            background: var(--color-surface);
+        }
+
+        .accordion-body ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .accordion-body li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--color-text);
+        }
+
+        .accordion-body li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+            font-weight: bold;
+        }
+
+        /* CARDS DE CATEGORIA */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .category-card {
+            background: var(--color-surface);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid var(--color-border);
+        }
+
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .category-card-header {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            padding: 1.2rem;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .category-card-body {
+            padding: 1.5rem;
+        }
+
+        .category-card-body ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .category-card-body li {
+            padding: 0.6rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--color-text);
+            font-size: 0.9rem;
+        }
+
+        .category-card-body li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-success);
+            font-weight: bold;
+        }
+
+        /* EXPANSION PANELS */
+        .expansion-panel {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .expansion-header {
+            padding: 1.2rem;
+            background: linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(139,92,246,0.08) 100%);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            width: 100%;
+            color: var(--color-text);
+            font-size: 0.95rem;
+        }
+
+        .expansion-header:hover {
+            background: linear-gradient(135deg, rgba(99,102,241,0.12) 0%, rgba(139,92,246,0.12) 100%);
+        }
+
+        .expansion-header.open {
+            background: linear-gradient(135deg, rgba(99,102,241,0.15) 0%, rgba(139,92,246,0.15) 100%);
+            color: var(--color-primary);
+        }
+
+        .expansion-icon {
+            transition: transform 0.3s ease;
+            font-size: 1.3rem;
+        }
+
+        .expansion-header.open .expansion-icon {
+            transform: rotate(180deg);
+        }
+
+        .expansion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1.2rem;
+        }
+
+        .expansion-body.open {
+            max-height: 600px;
+            padding: 1.2rem;
+        }
+
+        .expansion-body p {
+            color: var(--color-text);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* PRINT STYLES */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+
+            .dashboard-card,
+            .principle-card,
+            table,
+            .category-card {
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+
+            header {
+                margin-bottom: 1rem;
+                padding: 1rem;
+            }
+
+            .tabs {
+                display: none;
+            }
+
+            .tab-content {
+                display: block !important;
+            }
+
+            .accordion-content,
+            .expansion-body {
+                max-height: none !important;
+                overflow: visible !important;
+                padding: 1rem !important;
+            }
+
+            .accordion-header.active,
+            .expansion-header.open {
+                background: #f0f0f0 !important;
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tabs {
+                flex-wrap: wrap;
+            }
+
+            .tab-btn {
+                padding: 0.8rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            table {
+                font-size: 0.8rem;
+            }
+
+            th, td {
+                padding: 0.7rem;
+            }
+
+            .principle-card::before {
+                font-size: 1.5rem;
+                top: 0.5rem;
+                right: 1rem;
+            }
+
+            .principle-card {
+                padding: 1.5rem;
+            }
+
+            .principle-card h2 {
+                font-size: 1.1rem;
+            }
+
+            .principle-card p {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* BUTTON DE PRINT */
+        .print-btn {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--radius);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .print-btn:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📊 Estratégia de Produtos 2026</h1>
+        <p>IG Imports - Planejamento Integrado de Portfólio e Estoque</p>
+    </header>
+
+    <div class="container">
+        <button class="print-btn" onclick="window.print()">🖨️ Imprimir / Salvar PDF</button>
+
+        <!-- DASHBOARD CARDS -->
+        <div class="dashboard">
+            <div class="dashboard-card">
+                <h3>Catálogo Atual</h3>
+                <div class="value">6</div>
+                <div class="subtitle">Categorias ativas em 2026</div>
+            </div>
+            <div class="dashboard-card">
+                <h3>Top 1 - Ralador</h3>
+                <div class="value">1.612</div>
+                <div class="subtitle">unidades | R$ 50.316 | 20% faturamento</div>
+            </div>
+            <div class="dashboard-card">
+                <h3>Novos SKUs/Mês</h3>
+                <div class="value">3</div>
+                <div class="subtitle">validação contínua de mercado</div>
+            </div>
+            <div class="dashboard-card">
+                <h3>Meta Curva A</h3>
+                <div class="value">60-70%</div>
+                <div class="subtitle">Profundidade de estoque TOP 5</div>
+            </div>
+        </div>
+
+        <!-- PRINCÍPIO 2026 -->
+        <div class="principle-card">
+            <h2>Princípio 2026: Profundidade Estoque + Validação Contínua</h2>
+            <p>
+                Aumentar profundidade de estoque dos <strong>TOP 5 produtos</strong> (Ralador, Mochila, Óculos Juliet) para garantir disponibilidade 
+                e giro acelerado. Validar <strong>3 novos SKUs/mês</strong> em categorias sazonais. 
+                <strong>Meta: Curva A atingir 60-70%</strong> do faturamento, reduzindo dependência do TOP 1 de 20% → 12%.
+            </p>
+        </div>
+
+        <!-- TOP 3 TABELA -->
+        <h2 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--color-text);">🏆 TOP 3 Produtos 2026</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Posição</th>
+                    <th>Produto</th>
+                    <th>Unidades</th>
+                    <th>Faturamento</th>
+                    <th>% Receita</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="badge badge-danger">#1</span></td>
+                    <td><strong>Ralador Unificado</strong></td>
+                    <td>1.612 un</td>
+                    <td>R$ 50.316</td>
+                    <td><strong>20%</strong></td>
+                    <td><span class="badge badge-success">Consolidado</span></td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-warning">#2</span></td>
+                    <td><strong>Mochila Reforçada</strong></td>
+                    <td>~400 un</td>
+                    <td>~R$ 15.000</td>
+                    <td>~6%</td>
+                    <td><span class="badge badge-success">Core</span></td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-info">#3</span></td>
+                    <td><strong>Óculos Juliet</strong></td>
+                    <td>184 un</td>
+                    <td>R$ 12.994</td>
+                    <td>~5%</td>
+                    <td><span class="badge badge-primary">Em Alta</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- CATEGORIAS ATIVAS -->
+        <h2 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--color-text);">📦 6 Categorias Ativas em 2026</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <div class="category-card-header">🍴 Cozinha (Líder)</div>
+                <div class="category-card-body">
+                    <ul>
+                        <li>Ralador Profissional</li>
+                        <li>Utensílios Kit Básico</li>
+                        <li>Laminador Legumes</li>
+                        <li>Acessórios Gourmet</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-card-header">🎒 Mochilas (Core)</div>
+                <div class="category-card-body">
+                    <ul>
+                        <li>Mochila Executiva</li>
+                        <li>Mochila Escolar Reforçada</li>
+                        <li>Mochila Esportiva</li>
+                        <li>Mochila Feminina Premium</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-card-header">🔧 Ferramentas (S2)</div>
+                <div class="category-card-body">
+                    <ul>
+                        <li>Kit Ferramentas Profissional</li>
+                        <li>Parafusadeiras</li>
+                        <li>Alicates Variados</li>
+                        <li>Chaves de Fenda</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-card-header">⛺ Camping (S2)</div>
+                <div class="category-card-body">
+                    <ul>
+                        <li>Mochilas Camping 40L+</li>
+                        <li>Lanterna LED Portátil</li>
+                        <li>Ventilador Pescoço (Verão)</li>
+                        <li>Itens Térmicos (Inverno)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-card-header">🎁 Brinquedos (Q4)</div>
+                <div class="category-card-body">
+                    <ul>
+                        <li>Brinquedos Educativos</li>
+                        <li>Miniaturas Colecionáveis</li>
+                        <li>Kits de Construção</li>
+                        <li>Presentes Sazonais Natal</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-card-header">👓 Óculos (Atuais)</div>
+                <div class="category-card-body">
+                    <ul>
+                        <li>Óculos Juliet</li>
+                        <li>Óculos Metal Premium 24k</li>
+                        <li>Óculos Esportivos</li>
+                        <li>Óculos Lupa Profissional</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABAS - SEMESTRES -->
+        <h2 style="margin-top: 2rem; margin-bottom: 0.5rem; color: var(--color-text);">📅 Plano Mês a Mês</h2>
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab(event, 'semestre1')">📍 Semestre 1 (Jan-Jun)</button>
+            <button class="tab-btn" onclick="switchTab(event, 'semestre2')">📍 Semestre 2 (Jul-Dez)</button>
+        </div>
+
+        <!-- SEMESTRE 1 -->
+        <div id="semestre1" class="tab-content active">
+            <div class="expansion-panel">
+                <button class="expansion-header" onclick="toggleExpansion(event)">
+                    <span>Janeiro: Lançamento Primavera/Verão</span>
+                    <span class="expansion-icon">▼</span>
+                </button>
+                <div class="expansion-body">
+                    <p>
+                        <strong>Mochilas Premium Femininas:</strong> Lançar linha executiva com designs modernos para público profissional.<br>
+                        <strong>Utensílios Cozinha Kit:</strong> Promover kits básicos para nova temporada doméstica.<br>
+                        <strong>Acessórios Verão:</strong> Óculos solares e acessórios para estação quente.
+                    </p>
+                </div>
+            </div>
+
+            <div class="expansion-panel">
+                <button class="expansion-header" onclick="toggleExpansion(event)">
+                    <span>Fevereiro: Carnaval & Manutenção</span>
+                    <span class="expansion-icon">▼</span>
+                </button>
+                <div class="expansion-body">
+                    <p>
+                        <strong>Mochilas Executivas:</strong> Cores variadas para públicos corporativos e estudantis.<br>
+                        <strong>Utensílios Cozinha Multifuncionais:</strong> Kits com acessórios versáteis para receitas festivas.<br>
+                        <strong>Acessórios Esportivos:</strong> Bolsas pequenas, pulseiras fitness e itens de atividade física.
+                    </p>
+                </div>
+            </div>
+
+            <div class="expansion-panel">
+                <button class="expansion-header" onclick="toggleExpansion(event)">
+                    <span>Março: Transição Sazonal</span>
+                    <span class="expansion-icon">▼</span>
+                </button>
+                <div class="expansion-body">
+                    <p>
+                        <strong>Utensílios Cozinha Profissionais:</strong> Linha premium para chefs caseiros e pequenos restaurantes.<br>
+                        <strong>Mochilas Esportivas:</strong> Modelos com compartimentos técnicos para esportes ao ar livre.<br>
+                        <strong>Acessórios Inverno (Antecipado):</strong> Iniciar importação de itens térmicos e de proteção.
+                    </p>
+                </div>
+            </div>
+
+            <div class="expansion-panel">
+                <button class="expansion-header" onclick="toggleExpansion(event)">
+                    <span>Abril: Estabilização & Validação</span>
+                    <span class="expansion-icon">▼</span>
+                </button>
+                <div class="expansion-body">
+                    <p>
+                        <strong>Validação 3 SKUs:</strong> Testar novos modelos de mochilas, utensílios e acessórios com performance média.<br>
+                        <strong>Profundidade TOP 5:</strong> Aumentar estoque de Ralador e Mochilas reforçadas após validação de Q1.<br>
+                        <strong>Análise Curva A:</strong> Consolidar dados de faturamento para ajustes de mix.
+                    </p>
+                </div>
+            </div>
+
+            <div class="expansion-panel">
+                <button class="expansion-header" onclick="toggleExpansion(event)">
+                    <span>Maio: Início Inverno (S2)</span>
+                    <span class="expansion-icon">▼</span>
+                </button>
+                <div class="expansion-body">
+                    <p>
+                        <strong>Itens Inverno:</strong> Lançar mochilas térmicas, casacos impermeáveis e acessórios de proteção.<br>
+                        <strong>Camping Gear:</strong> Lanternas, ventiladores portáteis para fins de semana e trilhas.<br>
+                        <strong>Reavaliação SKUs:</strong> Desativar itens com baixa performance, manter TOP performers.
+                    </p>
+                </div>
+            </div>
+
+            <div class="expansion-panel">
+                <button class="expansion-header" onclick="toggleExpansion(event)">
+                    <span>Junho: Preparação Inverno Pleno</span>
+                    <span class="expansion-icon">▼</span>
+                </button>
+                <div class="expansion-body">
+                    <p>
+                        <strong>Estoque Inverno Pesado:</strong> Consolidar importações de itens térmicos para frio extremo.<br>
+                        <strong>Camping Profundo:</strong> Mochilas 50L+, aquecedores portáteis, itens de acampamento.<br>
+                        <strong>Validação Semestral:</strong> Revisar TOP 5, ajustar metas de Curva A para H2.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEMESTRE 2 -->
+        <div id="semestre2" class="tab-content">
+            <div class="expansion-panel">
+                <button class="expansion-header" onclick="toggleExpansion(event)">
+                    <span>Julho: Inverno Consolidado</span>
+                    <span class="expansion-icon">▼</span>
+                </button>
+                <div class="expansion-body">
+                    <p>
+                        <strong>Itens Inverno Premium:</strong> Aprofundar linha de mochilas térmicas de alta performance.<br>
+                        <strong>Camping Essencial:</strong> Focar em produtos que já validaram em maio/junho.<br>
+                        <strong>Validação 3 SKUs:</strong> Testar variações de cores/materiais em categorias estáveis.
+                    </p>
+                </div>
+            </div>
+
+            <div class="expansion-panel">
+                <button class="expansion-header" onclick="toggleExpansion(event)">
+                    <span>Agosto: Antecipação Primavera</span>
+                    <span class="expansion-icon">▼</span>
+                </button>
+                <div class="expansion-body">
+                    <p>
+                        <strong>Novos Designs Primavera:</strong> Começar lanç amento de mochilas com cores vibrantes para estação.<br>
+                        <strong>Redução Itens Inverno:</strong> Consolidar estoque dos TOP performers, criar espaço para S2.<br>
+                        <strong>Acessórios Transição:</strong> Itens versáteis que servem inverno final + primavera.
+                    </p>
+                </div>
+            </div>
+
+            <div class="expansion-panel">
+                <button class="expansion-header" onclick="toggleExpansion(event)">
+                    <span>Setembro: Transição Plena</span>
+                    <span class="expansion-icon">▼</span>
+                </button>
+                <div class="expansion-body">
+                    <p>
+                        <strong>Lançamento Primavera Oficial:</strong> Mochilas coloridas, acessórios outdoor, óculos de sol.<br>
+                        <strong>Descontinuação Inverno:</strong> Manter apenas TOP 2-3 itens de inverno por demanda residual.<br>
+                        <strong>Validação Contínua:</strong> 3 SKUs novos em preparação para verão.
+                    </p>
+                </div>
+            </div>
+
+            <div class="expansion-panel">
+                <button class="expansion-header" onclick="toggleExpansion(event)">
+                    <span>Outubro: Preparação Black Friday & Natal</span>
+                    <span class="expansion-icon">▼</span>
+                </button>
+                <div class="expansion-body">
+                    <p>
+                        <strong>Antecipação Brinquedos:</strong> Importar kits de presentes para Q4 (educativos, miniaturas).<br>
+                        <strong>Campanha Black Friday:</strong> Preparar bundle offers (mochilas + acessórios, kits cozinha).<br>
+                        <strong>Estoque Estratégico:</strong> Aumentar profundidade em TOP 5 para picos de vendas.
+                    </p>
+                </div>
+            </div>
+
+            <div class="expansion-panel">
+                <button class="expansion-header" onclick="toggleExpansion(event)">
+                    <span>Novembro: Black Friday & Natal Forte</span>
+                    <span class="expansion-icon">▼</span>
+                </button>
+                <div class="expansion-body">
+                    <p>
+                        <strong>Verão Premium:</strong> Lançar coleção verão com acessórios de praia (óculos, bolsas).<br>
+                        <strong>Brinquedos Natal:</strong> Validar top 3 itens de brinquedos, aumentar estoque para dezembro.<br>
+                        <strong>Black Friday Peak:</strong> Máxima profundidade em todos os TOP 5 + brinquedos sazonais.
+                    </p>
+                </div>
+            </div>
+
+            <div class="expansion-panel">
+                <button class="expansion-header" onclick="toggleExpansion(event)">
+                    <span>Dezembro: Natal & Planejamento 2027</span>
+                    <span class="expansion-icon">▼</span>
+                </button>
+                <div class="expansion-body">
+                    <p>
+                        <strong>Verão Consolidado:</strong> Profundidade máxima em acessórios de praia e mochilas estilosas.<br>
+                        <strong>Brinquedos Peak:</strong> Último push em kits educativos e presentes colecionáveis.<br>
+                        <strong>Revisão Anual:</strong> Analisar Curva A final, prepare SKUs 2027, atualizar metas de profundidade e validação.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ACORDEÃO - VALIDAÇÃO -->
+        <h2 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--color-text);">✅ Processo de Validação 3 SKUs/Mês</h2>
+        <div class="accordion">
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(event)">
+                    <span>Fase 1: Identificação & Importação (Semanas 1-2)</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>Analisar tendências de mercado (Pinterest, TikTok, Mercado Livre)</li>
+                            <li>Selecionar 3 SKUs alternativos em categorias ativas</li>
+                            <li>Importar amostra de teste com fornecedores</li>
+                            <li>Validar qualidade e custo-benefício</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(event)">
+                    <span>Fase 2: Teste de Mercado (Semanas 2-3)</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>Listar 5-10 unidades no Mercado Livre</li>
+                            <li>Monitorar CTR (Click-Through Rate) e conversões</li>
+                            <li>Coletar feedback de clientes via avaliações</li>
+                            <li>Registrar velocidade de venda e margem</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(event)">
+                    <span>Fase 3: Decisão & Escala (Semana 4)</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <ul>
+                            <li><strong>Go:</strong> Virou TOP performer (>5 vendas, >20% margem) → importar 50+ unidades</li>
+                            <li><strong>Hold:</strong> Performance média → manter 10-20 un estoque, revisar em 30 dias</li>
+                            <li><strong>No-Go:</strong> Baixo interesse (<2 vendas, <10% margem) → remover do catálogo</li>
+                            <li>Documentar learnings no Curva ABC trimestral</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(event)">
+                    <span>Meta Curva A 2026: De 20% → 12% (Redução Dependência TOP 1)</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <ul>
+                            <li><strong>Atual (2025):</strong> Ralador = 20% faturamento (concentração alta)</li>
+                            <li><strong>Meta 2026:</strong> Ralador + Mochila + Óculos (TOP 3) = 30-35% faturamento</li>
+                            <li><strong>Curva A Total:</strong> 60-70% (5-8 produtos)</li>
+                            <li><strong>Estratégia:</strong> Profundidade TOP 5 + validar 36 SKUs novos (3/mês × 12)</li>
+                            <li><strong>Resultado esperado:</strong> Diversificação de receita, redução de risco, maior giro</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SAZONALIDADE -->
+        <h2 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--color-text);">🌡️ Calendário de Sazonalidade 2026</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Período</th>
+                    <th>Sazonalidade</th>
+                    <th>Categorias Recomendadas</th>
+                    <th>Ações Estratégicas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="badge badge-info">Jan-Mar</span></td>
+                    <td>Primavera/Verão Inicial</td>
+                    <td>Mochilas, Acessórios Verão, Cozinha, Óculos</td>
+                    <td>Lançar designs premium, validar 3 SKUs/mês</td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-warning">Abr-Mai</span></td>
+                    <td>Transição → Inverno</td>
+                    <td>Mochilas Térmicas, Camping, Ferramentas</td>
+                    <td>Antecipação de inverno, aumentar estoque TOP 5</td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-danger">Jun-Ago</span></td>
+                    <td>Inverno Pleno</td>
+                    <td>Camping, Itens Térmicos, Mochilas Inverno</td>
+                    <td>Profundidade máxima, descontinuar verão</td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-success">Set-Out</span></td>
+                    <td>Primavera/Antecipação Q4</td>
+                    <td>Mochilas Coloridas, Acessórios, Brinquedos (prep)</td>
+                    <td>Transição de estoque, preparar Black Friday</td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-danger">Nov-Dez</span></td>
+                    <td>Verão + Natal</td>
+                    <td>Acessórios Praia, Brinquedos, Óculos, Mochilas</td>
+                    <td>Peak season estoque, máxima profundidade TOP 5 + brinquedos</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- FOOTER -->
+        <div style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, rgba(99,102,241,0.05) 0%, rgba(139,92,246,0.05) 100%); border-radius: var(--radius); text-align: center; color: var(--color-text-light); border: 1px solid var(--color-border);">
+            <p style="margin-bottom: 0.5rem;"><strong>📋 Documento de Estratégia Integrada</strong></p>
+            <p style="margin-bottom: 0.5rem; font-size: 0.9rem;">IG Imports | Sorocaba, SP | 2026</p>
+            <p style="margin: 0; font-size: 0.85rem;">Atualizado em: <span id="current-date"></span></p>
+        </div>
+    </div>
+
+    <script>
+        // Switch Tabs (Semesters)
+        function switchTab(event, tabId) {
+            event.preventDefault();
+            
+            // Hide all tabs
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(tab => tab.classList.remove('active'));
+            
+            // Remove active from all buttons
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            tabBtns.forEach(btn => btn.classList.remove('active'));
+            
+            // Show selected tab
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Toggle Accordion Items
+        function toggleAccordion(event) {
+            const header = event.currentTarget;
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.accordion-icon');
+            
+            // Close other open items
+            const otherItems = document.querySelectorAll('.accordion-item');
+            otherItems.forEach(item => {
+                const otherHeader = item.querySelector('.accordion-header');
+                const otherContent = item.querySelector('.accordion-content');
+                const otherIcon = otherHeader.querySelector('.accordion-icon');
+                
+                if (item !== header.closest('.accordion-item')) {
+                    otherHeader.classList.remove('active');
+                    otherContent.classList.remove('active');
+                }
+            });
+            
+            // Toggle current item
+            header.classList.toggle('active');
+            content.classList.toggle('active');
+        }
+
+        // Toggle Expansion Panels
+        function toggleExpansion(event) {
+            const header = event.currentTarget;
+            const body = header.nextElementSibling;
+            
+            // Close other open panels
+            const otherPanels = document.querySelectorAll('.expansion-panel');
+            otherPanels.forEach(panel => {
+                const otherHeader = panel.querySelector('.expansion-header');
+                const otherBody = panel.querySelector('.expansion-body');
+                
+                if (panel !== header.closest('.expansion-panel')) {
+                    otherHeader.classList.remove('open');
+                    otherBody.classList.remove('open');
+                }
+            });
+            
+            // Toggle current panel
+            header.classList.toggle('open');
+            body.classList.toggle('open');
+        }
+
+        // Set current date in footer
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const dateStr = today.toLocaleDateString('pt-BR', options);
+            document.getElementById('current-date').textContent = dateStr;
+        });
+
+        // Smooth scroll for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
