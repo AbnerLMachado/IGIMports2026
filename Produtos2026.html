@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)file:///C:/Users/abner/Downloads/estrategia_produtos_2026.html -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estratégia de Produtos 2026 - IG Imports</title>
+    <script src="./Estratégia de Produtos 2026 - IG Imports_files/chart.js.transferir"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #667eea;
+            margin: 40px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .subsection-title {
+            font-size: 1.3em;
+            color: #764ba2;
+            margin: 25px 0 15px 0;
+            padding-left: 15px;
+            border-left: 4px solid #764ba2;
+        }
+
+        /* ACCORDEONS */
+        .accordion-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .accordion-item {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .accordion-header.active {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        .accordion-icon {
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 15px;
+        }
+
+        .accordion-content.active {
+            max-height: 2000px;
+            padding: 15px;
+        }
+
+        .accordion-inner {
+            padding: 10px 0;
+        }
+
+        /* CARDS */
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border-left: 5px solid #667eea;
+            margin-bottom: 20px;
+        }
+
+        .card.highlight {
+            border-left-color: #27ae60;
+            background: #f0fdf4;
+        }
+
+        .card.warning {
+            border-left-color: #e74c3c;
+            background: #fef2f2;
+        }
+
+        .card.product {
+            border-left-color: #f39c12;
+            background: #fffbf0;
+        }
+
+        .card-title {
+            font-size: 1.1em;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .card-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #667eea;
+            margin: 10px 0;
+        }
+
+        .card.highlight .card-value {
+            color: #27ae60;
+        }
+
+        .card.warning .card-value {
+            color: #e74c3c;
+        }
+
+        .card.product .card-value {
+            color: #f39c12;
+        }
+
+        /* TABELAS */
+        .table-container {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            overflow-x: auto;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* BADGES */
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin: 3px;
+        }
+
+        .badge-primary {
+            background: #e3f2fd;
+            color: #667eea;
+        }
+
+        .badge-success {
+            background: #e8f5e9;
+            color: #27ae60;
+        }
+
+        .badge-warning {
+            background: #fff3e0;
+            color: #f39c12;
+        }
+
+        .badge-danger {
+            background: #fef2f2;
+            color: #e74c3c;
+        }
+
+        .badge-info {
+            background: #e0f2f1;
+            color: #00897b;
+        }
+
+        /* GRIDS */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: relative;
+            height: 400px;
+        }
+
+        /* LISTAS DE PRODUTOS */
+        .product-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .product-list li {
+            padding: 12px;
+            margin: 8px 0;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-list li strong {
+            color: #667eea;
+        }
+
+        .product-status {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        /* EXPANSION PANELS */
+        .expansion-panel {
+            margin-bottom: 15px;
+        }
+
+        .expansion-header {
+            background: #f8f9fa;
+            padding: 12px;
+            cursor: pointer;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #667eea;
+            transition: all 0.3s ease;
+            border-left: 4px solid #667eea;
+        }
+
+        .expansion-header:hover {
+            background: #ecf0f1;
+            transform: translateX(5px);
+        }
+
+        .expansion-header.active {
+            background: #e3f2fd;
+        }
+
+        .expansion-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .expansion-header.active .expansion-arrow {
+            transform: rotate(180deg);
+        }
+
+        .expansion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 12px;
+        }
+
+        .expansion-content.active {
+            max-height: 1500px;
+            padding: 12px;
+            background: white;
+            margin-top: 8px;
+            border-radius: 6px;
+        }
+
+        /* AÇÕES */
+        .action-box {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+        }
+
+        .action-box h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .action-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .action-box li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .action-box li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .page-break {
+            page-break-after: always;
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        /* COMPARATIVO */
+        .comparison-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .comparison-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .comparison-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .comparison-item:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-item strong {
+            color: #2c3e50;
+        }
+
+        .comparison-item span {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        /* TABS */
+        .tabs-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+
+        .tabs-header {
+            display: flex;
+            border-bottom: 2px solid #ecf0f1;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 15px;
+            background: #f8f9fa;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: #667eea;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            min-width: 150px;
+        }
+
+        .tab-button:hover {
+            background: #ecf0f1;
+        }
+
+        .tab-button.active {
+            background: white;
+            color: #764ba2;
+            border-bottom-color: #764ba2;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                padding: 0;
+            }
+            .card, .chart-container, .table-container, .comparison-card, .accordion-item {
+                box-shadow: none;
+                border: 1px solid #ecf0f1;
+            }
+            .page-break {
+                page-break-after: always;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 1.8em;
+            }
+            .chart-container {
+                height: 300px;
+            }
+            .accordion-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .tab-button {
+                min-width: 100px;
+                font-size: 0.9em;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #95a5a6;
+            font-size: 0.9em;
+            margin-top: 40px;
+            border-top: 1px solid #ecf0f1;
+        }
+
+        .metric-up {
+            color: #27ae60;
+            font-weight: 600;
+        }
+
+        .metric-down {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- HEADER -->
+    <header>
+        <h1>📦 Estratégia de Produtos 2026</h1>
+        <p>IG Imports - Mercado Livre</p>
+        <p style="font-size: 0.95em; margin-top: 10px;">Planejamento de produtos, lançamentos e promoções mês a mês com análise detalhada</p>
+    </header>
+
+    <!-- DASHBOARD RESUMIDO -->
+    <div class="section-title">Dashboard de Produtos</div>
+    
+    <div class="accordion-wrapper" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 30px;">
+        <div class="card">
+            <div class="card-title">Catálogo Atual (2025)</div>
+            <div class="card-value">~120 SKUs</div>
+            <p style="font-size: 0.9em; color: #95a5a6;">Estimado com base em vendas históricas</p>
+        </div>
+        <div class="card highlight">
+            <div class="card-title">Novos SKUs 2026</div>
+            <div class="card-value">48</div>
+            <p style="font-size: 0.9em; color: #95a5a6;">3-5 produtos por mês</p>
+        </div>
+        <div class="card warning">
+            <div class="card-title">Reduzir TOP 3</div>
+            <div class="card-value">53% → 20%</div>
+            <p style="font-size: 0.9em; color: #95a5a6;">Máximo por item</p>
+        </div>
+        <div class="card product">
+            <div class="card-title">Full ML</div>
+            <div class="card-value">70%</div>
+            <p style="font-size: 0.9em; color: #95a5a6;">Até julho de 2026</p>
+        </div>
+    </div>
+
+    <!-- SEÇÃO 1: PRODUTOS BASE (BEST SELLERS) -->
+    <div class="page-break"></div>
+    <div class="section-title">1. Produtos Base - Best Sellers 2025</div>
+
+    <div class="action-box">
+        <h4>📊 Análise dos TOP 3 Produtos</h4>
+        <ul>
+            <li>Representam <strong>53% dos pedidos</strong> e <strong>31,7% do faturamento</strong></li>
+            <li>Todos os 3 devem ser mantidos com estoque forte</li>
+            <li>Objetivo 2026: Reduzir concentração para máximo 20% cada</li>
+            <li>Estratégia: Manter vendas absolutos, crescer outros produtos</li>
+        </ul>
+    </div>
+
+    <div class="table-container">
+        <h3 style="margin-bottom: 20px; color: #667eea;">Produtos Best Sellers - Gestão 2026</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ranking</th>
+                    <th>SKU</th>
+                    <th>Produto</th>
+                    <th class="text-right">2025 Vendas</th>
+                    <th class="text-right">2025 Faturamento</th>
+                    <th>Categoria</th>
+                    <th>Ação 2026</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="badge badge-primary">TOP 1</span></td>
+                    <td><strong>RALADOR</strong></td>
+                    <td>Descascador De Legumes Ralador Fatiador Aço Profissional</td>
+                    <td class="text-right">830 un.</td>
+                    <td class="text-right">R$ 24.278,77</td>
+                    <td><span class="badge badge-success">Cozinha</span></td>
+                    <td>✓ Manter | Validar variantes</td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-primary">TOP 2</span></td>
+                    <td><strong>MOCHESCO-PT-FULL</strong></td>
+                    <td>Mochila Reforçada Viagem Escolar Trabalho Faculdade Multiuso</td>
+                    <td class="text-right">783 un.</td>
+                    <td class="text-right">R$ 30.019,08</td>
+                    <td><span class="badge badge-info">Mochilas</span></td>
+                    <td>✓ Manter | Cores + tamanhos</td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-primary">TOP 3</span></td>
+                    <td><strong>CO8425047</strong></td>
+                    <td>Descascador De Legumes Ralador Fatiador Aço Profissional</td>
+                    <td class="text-right">782 un.</td>
+                    <td class="text-right">R$ 26.037,48</td>
+                    <td><span class="badge badge-success">Cozinha</span></td>
+                    <td>✓ Manter | Consolidar com TOP 1</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SEÇÃO 2: ANÁLISE POR CATEGORIA -->
+    <div class="page-break"></div>
+    <div class="section-title">2. Análise por Categoria de Produtos</div>
+
+    <div class="subsection-title">Categoria 1: Cozinha &amp; Utensílios (TOP PRIORITY)</div>
+    <div class="card product">
+        <div class="card-title">💼 Categoria: Cozinha &amp; Utensílios</div>
+        <p><strong>Importância:</strong> 🔴 CRÍTICA (TOP 1 + TOP 3 = 18,9% faturamento)</p>
+        <p><strong>Opportunity:</strong> Expandir linhas de descascadores, raladores e acessórios de cozinha</p>
+        <p style="margin-top: 10px;"><strong>Produtos Base 2025:</strong></p>
+        <ul class="product-list">
+            <li>
+                <span><strong>Descascador/Ralador Aço</strong> (2 SKUs) - 1.612 un. vendidas</span>
+                <span class="product-status">
+                    <span class="badge badge-primary">Best Seller</span>
+                    <span class="badge badge-success">Mantém</span>
+                </span>
+            </li>
+            <li>
+                <span><strong>Mangueira Mágica Retrátil</strong> - 164 un. vendidas</span>
+                <span class="product-status">
+                    <span class="badge badge-warning">Segmento</span>
+                    <span class="badge badge-info">4º maior</span>
+                </span>
+            </li>
+        </ul>
+        <p style="margin-top: 15px;"><strong>Novos Produtos a Lançar 2026:</strong></p>
+        <ul style="list-style: disc; padding-left: 20px;">
+            <li><strong>Jogo de Descascadores (Kit 3 peças)</strong> - Janeiro (potencial: 300-400 un./mês)</li>
+            <li><strong>Ralador Multifuncional 4 Lados</strong> - Fevereiro (potencial: 200-250 un./mês)</li>
+            <li><strong>Faca de Chef Profissional Aço Inox</strong> - Março (potencial: 150-200 un./mês)</li>
+            <li><strong>Escorredor de Macarrão/Peneira</strong> - Abril (potencial: 180-220 un./mês)</li>
+            <li><strong>Conjunto Utensílios Cozinha (12 peças)</strong> - Junho (potencial: 100-150 un./mês)</li>
+            <li><strong>Amolador de Facas Manual</strong> - Agosto (potencial: 120-150 un./mês)</li>
+            <li><strong>Cortador de Alimentos Ajustável</strong> - Setembro (potencial: 140-180 un./mês)</li>
+        </ul>
+    </div>
+
+    <div class="subsection-title">Categoria 2: Mochilas &amp; Bolsas (CORE PRODUCT)</div>
+    <div class="card product">
+        <div class="card-title">🎒 Categoria: Mochilas &amp; Bolsas</div>
+        <p><strong>Importância:</strong> 🟡 ALTA (TOP 2 = 11,8% faturamento + 4º lugar = 2,5%)</p>
+        <p><strong>Opportunity:</strong> Adicionar cores, tamanhos, modelos especializados</p>
+        <p style="margin-top: 10px;"><strong>Produtos Base 2025:</strong></p>
+        <ul class="product-list">
+            <li>
+                <span><strong>Mochila Reforçada Multiuso</strong> (3 SKUs) - 1.276 un. vendidas</span>
+                <span class="product-status">
+                    <span class="badge badge-primary">Best Seller</span>
+                    <span class="badge badge-success">Mantém</span>
+                </span>
+            </li>
+        </ul>
+        <p style="margin-top: 15px;"><strong>Novos Produtos a Lançar 2026:</strong></p>
+        <ul style="list-style: disc; padding-left: 20px;">
+            <li><strong>Mochila Feminina Premium (5 cores)</strong> - Janeiro (potencial: 180-220 un./mês)</li>
+            <li><strong>Mochila Executiva/Notebook</strong> - Fevereiro (potencial: 150-180 un./mês)</li>
+            <li><strong>Mochila Esportiva Impermeável</strong> - Março (potencial: 120-150 un./mês)</li>
+            <li><strong>Mochila Kids Personalizável</strong> - Abril (potencial: 100-130 un./mês)</li>
+            <li><strong>Mochila de Camping/Trilha 40L</strong> - Julho (potencial: 80-120 un./mês)</li>
+            <li><strong>Mochila Térmica para Delivery</strong> - Agosto (potencial: 140-180 un./mês)</li>
+            <li><strong>Mochila de Viagem com Rodas</strong> - Outubro (potencial: 90-120 un./mês)</li>
+        </ul>
+    </div>
+
+    <div class="subsection-title">Categoria 3: Óculos de Sol (NOVO DESTAQUE 2026)</div>
+    <div class="card product">
+        <div class="card-title">😎 Categoria: Óculos de Sol &amp; Acessórios</div>
+        <p><strong>Importância:</strong> 🟡 MÉDIA (5º lugar 2025 = 5,1% faturamento)</p>
+        <p><strong>Opportunity:</strong> Expandir estilos, cores e modelos premium</p>
+        <p style="margin-top: 10px;"><strong>Produtos Base 2025:</strong></p>
+        <ul class="product-list">
+            <li>
+                <span><strong>Óculos Polarizados Juliet X-metal</strong> - 184 un. vendidas</span>
+                <span class="product-status">
+                    <span class="badge badge-warning">Segmento</span>
+                    <span class="badge badge-info">Niche</span>
+                </span>
+            </li>
+        </ul>
+        <p style="margin-top: 15px;"><strong>Novos Produtos a Lançar 2026:</strong></p>
+        <ul style="list-style: disc; padding-left: 20px;">
+            <li><strong>Óculos de Sol Clássico (Aviador/Wayfarer)</strong> - Janeiro (potencial: 150-200 un./mês)</li>
+            <li><strong>Óculos Esportivo com Lentes Intercambiáveis</strong> - Fevereiro (potencial: 100-130 un./mês)</li>
+            <li><strong>Óculos Vintage Retrô (5+ estilos)</strong> - Março (potencial: 120-160 un./mês)</li>
+            <li><strong>Óculos Premium Polarizados</strong> - Maio (potencial: 130-170 un./mês)</li>
+            <li><strong>Óculos Infantil Proteção UV</strong> - Junho (potencial: 80-110 un./mês)</li>
+            <li><strong>Óculos de Proteção Laboratorial</strong> - Setembro (potencial: 60-90 un./mês)</li>
+        </ul>
+    </div>
+
+    <div class="subsection-title">Categoria 4: Ferramentas &amp; Acessórios (CRESCIMENTO S2)</div>
+    <div class="card product">
+        <div class="card-title">🔧 Categoria: Ferramentas &amp; Acessórios</div>
+        <p><strong>Importância:</strong> 🟢 EMERGENTE (Foco em S2 = Jul-Dez)</p>
+        <p><strong>Opportunity:</strong> Criar linha completa de ferramentas e acessórios</p>
+        <p style="margin-top: 10px;"><strong>Produtos Base 2025:</strong></p>
+        <ul class="product-list">
+            <li>
+                <span><strong>Mangueira Mágica Retrátil 15m</strong> - 164 un. vendidas</span>
+                <span class="product-status">
+                    <span class="badge badge-warning">Segmento</span>
+                </span>
+            </li>
+        </ul>
+        <p style="margin-top: 15px;"><strong>Novos Produtos a Lançar 2026:</strong></p>
+        <ul style="list-style: disc; padding-left: 20px;">
+            <li><strong>Kit Ferramentas Básico 16 Peças</strong> - Julho (potencial: 200-250 un./mês)</li>
+            <li><strong>Chave de Fenda Ajustável Premium</strong> - Julho (potencial: 150-180 un./mês)</li>
+            <li><strong>Alicate Multiuso Profissional (3 tipos)</strong> - Agosto (potencial: 180-220 un./mês)</li>
+            <li><strong>Mangueira Mágica 25m Premium</strong> - Setembro (potencial: 120-150 un./mês)</li>
+            <li><strong>Chave Inglesa Ajustável Aço</strong> - Setembro (potencial: 100-130 un./mês)</li>
+            <li><strong>Martelo de Borracha Profissional</strong> - Outubro (potencial: 80-110 un./mês)</li>
+            <li><strong>Kit Broca Parede/Metal (50 peças)</strong> - Novembro (potencial: 140-180 un./mês)</li>
+            <li><strong>Fita Métrica Retrátil 10m</strong> - Dezembro (potencial: 160-200 un./mês)</li>
+        </ul>
+    </div>
+
+    <div class="subsection-title">Categoria 5: Camping &amp; Outdoor (S2 FOCUS)</div>
+    <div class="card product">
+        <div class="card-title">⛺ Categoria: Camping &amp; Outdoor</div>
+        <p><strong>Importância:</strong> 🟢 EMERGENTE (Foco em S2 = Jul-Dez)</p>
+        <p><strong>Opportunity:</strong> Criar segmento forte para verão/inverno</p>
+        <p style="margin-top: 15px;"><strong>Novos Produtos a Lançar 2026:</strong></p>
+        <ul style="list-style: disc; padding-left: 20px;">
+            <li><strong>Mochila de Camping 50L</strong> - Julho (potencial: 120-150 un./mês)</li>
+            <li><strong>Lanterna LED Recarregável</strong> - Julho (potencial: 200-250 un./mês)</li>
+            <li><strong>Saco de Dormir Térmico</strong> - Agosto (potencial: 100-130 un./mês)</li>
+            <li><strong>Barraca Camping 2 Pessoas Impermeável</strong> - Setembro (potencial: 80-110 un./mês)</li>
+            <li><strong>Kit Piquenique Completo (Talheres + Prato)</strong> - Outubro (potencial: 150-190 un./mês)</li>
+            <li><strong>Corda Reforçada Multiuso 50m</strong> - Outubro (potencial: 90-120 un./mês)</li>
+            <li><strong>Mochila Térmica Camping Insulated</strong> - Dezembro (potencial: 140-180 un./mês)</li>
+        </ul>
+    </div>
+
+    <div class="subsection-title">Categoria 6: Brinquedos &amp; Infantil (DEZEMBRO + VERÃO)</div>
+    <div class="card product">
+        <div class="card-title">🧸 Categoria: Brinquedos &amp; Infantil</div>
+        <p><strong>Importância:</strong> 🟡 SAZONAL (Pico Dez + Jan/Fev)</p>
+        <p><strong>Opportunity:</strong> Lançamentos focados em datas especiais</p>
+        <p style="margin-top: 15px;"><strong>Novos Produtos a Lançar 2026:</strong></p>
+        <ul style="list-style: disc; padding-left: 20px;">
+            <li><strong>Brinquedo Educativo STEM (4+ anos)</strong> - Outubro (potencial: 100-130 un./mês)</li>
+            <li><strong>Bola de Borracha Colorida (6 tamanhos)</strong> - Outubro (potencial: 180-220 un./mês)</li>
+            <li><strong>Quebra-Cabeça Infantil 3D (4 níveis dif.)</strong> - Novembro (potencial: 140-180 un./mês)</li>
+            <li><strong>Carrinho de Brinquedo Friction (5 modelos)</strong> - Novembro (potencial: 150-190 un./mês)</li>
+            <li><strong>Jogo de Tabuleiro Família (4+ players)</strong> - Dezembro (potencial: 120-160 un./mês)</li>
+            <li><strong>Brinquedo de Banho Impermeável Set</strong> - Janeiro (potencial: 100-130 un./mês)</li>
+        </ul>
+    </div>
+
+    <!-- SEÇÃO 3: PLANO MÊS A MÊS -->
+    <div class="page-break"></div>
+    <div class="section-title">3. Plano de Lançamentos Mês a Mês</div>
+
+    <div class="tabs-container">
+        <div class="tabs-header">
+            <button class="tab-button active" onclick="switchTab(event, &#39;semestre1&#39;)">Semestre 1 (Jan-Jun)</button>
+            <button class="tab-button" onclick="switchTab(event, &#39;semestre2&#39;)">Semestre 2 (Jul-Dez)</button>
+        </div>
+
+        <!-- SEMESTRE 1 -->
+        <div id="semestre1" class="tab-content active">
+            <h3 style="color: #667eea; margin-bottom: 20px;">📅 Semestre 1: Diversificação &amp; Base</h3>
+
+            <!-- JANEIRO -->
+            <div class="accordion-item" style="margin-bottom: 20px; border: 2px solid #667eea;">
+                <div class="accordion-header active" onclick="toggleAccordion(this)">
+                    <span>🎯 Janeiro 2026 - Volta às aulas + Verão</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content active">
+                    <div style="padding: 20px;">
+                        <div class="comparison-card" style="margin-bottom: 20px;">
+                            <h3>Meta Janeiro 2026</h3>
+                            <div class="comparison-item">
+                                <strong>Faturamento</strong>
+                                <span>R$ 40.000</span>
+                            </div>
+                            <div class="comparison-item">
+                                <strong>Pedidos esperados</strong>
+                                <span>730 unidades</span>
+                            </div>
+                            <div class="comparison-item">
+                                <strong>Novos SKUs</strong>
+                                <span>3 lançamentos</span>
+                            </div>
+                            <div class="comparison-item">
+                                <strong>Investimento ADS</strong>
+                                <span>R$ 2.000</span>
+                            </div>
+                        </div>
+
+                        <h4 style="color: #764ba2; margin: 20px 0 15px 0;">📦 Produtos para Lançar em Janeiro:</h4>
+                        <div class="expansion-panel">
+                            <div class="expansion-header" onclick="toggleExpansion(this)">
+                                <span>1️⃣ Mochila Feminina Premium (5 cores)</span>
+                                <span class="expansion-arrow">▼</span>
+                            </div>
+                            <div class="expansion-content">
+                                <p><strong>Categoria:</strong> Mochilas &amp; Bolsas</p>
+                                <p><strong>SKU:</strong> MOCHFEM-PREM-2026</p>
+                                <p><strong>Descrição:</strong> Mochila feminina com design premium, compartimentos internos organizadores, alças reforçadas e material resistente à água.</p>
+                                <p><strong>Cores:</strong> Rosa, Preto, Azul, Roxo, Cinza</p>
+                                <p><strong>Potencial mensal:</strong> 180-220 unidades</p>
+                                <p><strong>Preço estimado:</strong> R$ 85-120</p>
+                                <p><strong>Estratégia:</strong> Destacar em ADS direcionado para mulheres | Foco: volta às aulas</p>
+                                <p><strong>Ações:</strong></p>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>✓ Full ML desde dia 1</li>
+                                    <li>✓ Fotos em alta qualidade (mínimo 6 ângulos)</li>
+                                    <li>✓ Descrição destacando organização + impermeável</li>
+                                    <li>✓ Campanha ADS: "Volta às aulas com estilo"</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="expansion-panel">
+                            <div class="expansion-header" onclick="toggleExpansion(this)">
+                                <span>2️⃣ Jogo de Descascadores Kit 3 Peças</span>
+                                <span class="expansion-arrow">▼</span>
+                            </div>
+                            <div class="expansion-content">
+                                <p><strong>Categoria:</strong> Cozinha &amp; Utensílios</p>
+                                <p><strong>SKU:</strong> DESCKIT3-ACOS-2026</p>
+                                <p><strong>Descrição:</strong> Kit com 3 descascadores em aço inox: descascador fino, descascador grosso e ralador 4 faces. Perfeito para cozinhas modernas.</p>
+                                <p><strong>Composição:</strong> 3 peças + embalagem premium</p>
+                                <p><strong>Potencial mensal:</strong> 300-400 unidades</p>
+                                <p><strong>Preço estimado:</strong> R$ 45-65</p>
+                                <p><strong>Estratégia:</strong> Posicionar como "kit completo" | Alto volume esperado</p>
+                                <p><strong>Ações:</strong></p>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>✓ Full ML desde dia 1</li>
+                                    <li>✓ Vídeo demonstrativo no anúncio</li>
+                                    <li>✓ Comparar com compra individual (destacar economia)</li>
+                                    <li>✓ Campanha ADS: "Kit completo da cozinha"</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="expansion-panel">
+                            <div class="expansion-header" onclick="toggleExpansion(this)">
+                                <span>3️⃣ Óculos de Sol Clássico Aviador</span>
+                                <span class="expansion-arrow">▼</span>
+                            </div>
+                            <div class="expansion-content">
+                                <p><strong>Categoria:</strong> Óculos de Sol &amp; Acessórios</p>
+                                <p><strong>SKU:</strong> OCULOS-AVIADOR-2026</p>
+                                <p><strong>Descrição:</strong> Óculos de sol estilo aviador clássico com lentes de proteção UV400, moldura em metal dourado/prateado, perfeito para verão.</p>
+                                <p><strong>Variantes:</strong> 2 cores de moldura + 3 cores de lente</p>
+                                <p><strong>Potencial mensal:</strong> 150-200 unidades</p>
+                                <p><strong>Preço estimado:</strong> R$ 35-55</p>
+                                <p><strong>Estratégia:</strong> Ocupar espaço no segmento de óculos | Verão é temporada alta</p>
+                                <p><strong>Ações:</strong></p>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>✓ Full ML desde dia 1</li>
+                                    <li>✓ Fotos com e sem óculos (lifestyle)</li>
+                                    <li>✓ Destacar proteção UV + qualidade</li>
+                                    <li>✓ Campanha ADS: "Verão com proteção"</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h4 style="color: #764ba2; margin: 20px 0 15px 0;">📊 Manutenção de Produtos Existentes:</h4>
+                        <ul class="product-list">
+                            <li>
+                                <span><strong>Ralador/Descascador Aço (TOP 1 + TOP 3)</strong></span>
+                                <span class="product-status">
+                                    <span class="badge badge-success">Mantém</span>
+                                    <span class="badge badge-primary">Restock</span>
+                                </span>
+                            </li>
+                            <li>
+                                <span><strong>Mochila Reforçada Multiuso</strong></span>
+                                <span class="product-status">
+                                    <span class="badge badge-success">Mantém</span>
+                                    <span class="badge badge-primary">Full</span>
+                                </span>
+                            </li>
+                            <li>
+                                <span><strong>Mangueira Mágica Retrátil</strong></span>
+                                <span class="product-status">
+                                    <span class="badge badge-warning">Baixa</span>
+                                    <span class="badge badge-info">Monitor</span>
+                                </span>
+                            </li>
+                        </ul>
+
+                        <h4 style="color: #764ba2; margin: 20px 0 15px 0;">🎯 Estratégia de Marketing Janeiro:</h4>
+                        <div class="action-box">
+                            <ul>
+                                <li>Destacar "Volta às Aulas" nas mochilas novas</li>
+                                <li>Promoção cruzada: Mochila + Kit Descascador</li>
+                                <li>Foco ADS: Mulheres 25-45 anos (mochilas) | Mães 30-50 anos (cozinha)</li>
+                                <li>Budget ADS: R$ 2.000 | ROAS mínimo: 20x</li>
+                                <li>Avaliar performance até dia 25 para ajustes fev</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FEVEREIRO -->
+            <div class="accordion-item" style="margin-bottom: 20px; border: 2px solid #667eea;">
+                <div class="accordion-header active" onclick="toggleAccordion(this)">
+                    <span>🎯 Fevereiro 2026 - Carnaval + Mochilas</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content active">
+                    <div style="padding: 20px;">
+                        <div class="comparison-card" style="margin-bottom: 20px;">
+                            <h3>Meta Fevereiro 2026</h3>
+                            <div class="comparison-item">
+                                <strong>Faturamento</strong>
+                                <span>R$ 45.000</span>
+                            </div>
+                            <div class="comparison-item">
+                                <strong>Pedidos esperados</strong>
+                                <span>820 unidades</span>
+                            </div>
+                            <div class="comparison-item">
+                                <strong>Novos SKUs</strong>
+                                <span>3 lançamentos</span>
+                            </div>
+                            <div class="comparison-item">
+                                <strong>Investimento ADS</strong>
+                                <span>R$ 2.250</span>
+                            </div>
+                        </div>
+
+                        <h4 style="color: #764ba2; margin: 20px 0 15px 0;">📦 Produtos para Lançar em Fevereiro:</h4>
+                        <div class="expansion-panel">
+                            <div class="expansion-header" onclick="toggleExpansion(this)">
+                                <span>1️⃣ Mochila Executiva/Notebook</span>
+                                <span class="expansion-arrow">▼</span>
+                            </div>
+                            <div class="expansion-content">
+                                <p><strong>Categoria:</strong> Mochilas &amp; Bolsas</p>
+                                <p><strong>SKU:</strong> MOCHEXA-NOTEB-2026</p>
+                                <p><strong>Descrição:</strong> Mochila executiva com compartimento para notebook até 15", múltiplos bolsos organizadores, material em nylon resistente, perfeita para trabalho.</p>
+                                <p><strong>Potencial mensal:</strong> 150-180 unidades</p>
+                                <p><strong>Preço estimado:</strong> R$ 110-150</p>
+                                <p><strong>Estratégia:</strong> Volta ao trabalho pós-carnaval | Público executivo</p>
+                            </div>
+                        </div>
+
+                        <div class="expansion-panel">
+                            <div class="expansion-header" onclick="toggleExpansion(this)">
+                                <span>2️⃣ Ralador Multifuncional 4 Lados</span>
+                                <span class="expansion-arrow">▼</span>
+                            </div>
+                            <div class="expansion-content">
+                                <p><strong>Categoria:</strong> Cozinha &amp; Utensílios</p>
+                                <p><strong>SKU:</strong> RALADOR4L-PROF-2026</p>
+                                <p><strong>Descrição:</strong> Ralador profissional em aço inox com 4 lados diferentes: fino, grosso, descascador e fatiador. Base com ventosa antideslizante.</p>
+                                <p><strong>Potencial mensal:</strong> 200-250 unidades</p>
+                                <p><strong>Preço estimado:</strong> R$ 55-85</p>
+                                <p><strong>Estratégia:</strong> Completar linha de cozinha | Ticket médio mais alto</p>
+                            </div>
+                        </div>
+
+                        <div class="expansion-panel">
+                            <div class="expansion-header" onclick="toggleExpansion(this)">
+                                <span>3️⃣ Óculos Esportivo com Lentes Intercambiáveis</span>
+                                <span class="expansion-arrow">▼</span>
+                            </div>
+                            <div class="expansion-content">
+                                <p><strong>Categoria:</strong> Óculos de Sol &amp; Acessórios</p>
+                                <p><strong>SKU:</strong> OCULOS-ESPORT-2026</p>
+                                <p><strong>Descrição:</strong> Óculos esportivo com 3 lentes intercambiáveis (clara, âmbar, vermelha), moldura resistente a impactos, ideal para trilha e esportes.</p>
+                                <p><strong>Potencial mensal:</strong> 100-130 unidades</p>
+                                <p><strong>Preço estimado:</strong> R$ 75-120</p>
+                                <p><strong>Estratégia:</strong> Público esportista | Valor agregado maior</p>
+                            </div>
+                        </div>
+
+                        <h4 style="color: #764ba2; margin: 20px 0 15px 0;">🎯 Estratégia de Marketing Fevereiro:</h4>
+                        <div class="action-box">
+                            <ul>
+                                <li>Promoção "Volta ao trabalho" para mochila executiva</li>
+                                <li>Carnaval: Fotos festivas com óculos + mochilas coloridas</li>
+                                <li>Cross-sell: Mochila + Ralador para presentes</li>
+                                <li>Budget ADS: R$ 2.250 | ROAS mínimo: 20x</li>
+                                <li>Foco: Público feminino + executivo</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MARÇO -->
+            <div class="accordion-item" style="margin-bottom: 20px; border: 2px solid #667eea;">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>🎯 Março 2026 - Cozinha &amp; Acessórios</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div style="padding: 20px;">
+                        <div class="comparison-card" style="margin-bottom: 20px;">
+                            <h3>Meta Março 2026</h3>
+                            <div class="comparison-item">
+                                <strong>Faturamento</strong>
+                                <span>R$ 27.500</span>
+                            </div>
+                            <div class="comparison-item">
+                                <strong>Pedidos esperados</strong>
+                                <span>500 unidades</span>
+                            </div>
+                            <div class="comparison-item">
+                                <strong>Novos SKUs</strong>
+                                <span>4 lançamentos</span>
+                            </div>
+                            <div class="comparison-item">
+                                <strong>Investimento ADS</strong>
+                                <span>R$ 1.375</span>
+                            </div>
+                        </div>
+
+                        <h4 style="color: #764ba2; margin: 20px 0 15px 0;">📦 Produtos para Lançar em Março:</h4>
+                        <div class="expansion-panel">
+                            <div class="expansion-header" onclick="toggleExpansion(this)">
+                                <span>1️⃣ Faca de Chef Profissional Aço Inox</span>
+                                <span class="expansion-arrow">▼</span>
+                            </div>
+                            <div class="expansion-content">
+                                <p><strong>Categoria:</strong> Cozinha &amp; Utensílios</p>
+                                <p><strong>SKU:</strong> FACA-CHEF-PROF-2026</p>
+                                <p><strong>Descrição:</strong> Faca de chef profissional em aço inox premium, lâmina 20cm, cabo ergonômico, perfeita para cortes precisos.</p>
+                                <p><strong>Potencial mensal:</strong> 150-200 unidades</p>
+                                <p><strong>Preço estimado:</strong> R$ 45-70</p>
+                                <p><strong>Estratégia:</strong> Completar linha profissional de cozinha</p>
+                            </div>
+                        </div>
+
+                        <div class="expansion-panel">
+                            <div class="expansion-header" onclick="toggleExpansion(this)">
+                                <span>2️⃣ Mochila Esportiva Impermeável</span>
+                                <span class="expansion-arrow">▼</span>
+                            </div>
+                            <div class="expansion-content">
+                                <p><strong>Categoria:</strong> Mochilas &amp; Bolsas</p>
+                                <p><strong>SKU:</strong> MOCHESPOR-IMPER-2026</p>
+                                <p><strong>Descrição:</strong> Mochila esportiva impermeável, compartimento para tênis, alças acolchoadas, ideal para academia e esportes.</p>
+                                <p><strong>Potencial mensal:</strong> 120-150 unidades</p>
+                                <p><strong>Preço estimado:</strong> R$ 75-110</p>
+                                <p><strong>Estratégia:</strong> Público fitness em crescimento</p>
+                            </div>
+                        </div>
+
+                        <div class="expansion-panel">
+                            <div class="expansion-header" onclick="toggleExpansion(this)">
+                                <span>3️⃣ Óculos Vintage Retrô (5 estilos)</span>
+                                <span class="expansion-arrow">▼</span>
+                            </div>
+                            <div class="expansion-content">
+                                <p><strong>Categoria:</strong> Óculos de Sol &amp; Acessórios</p>
+                                <p><strong>SKU:</strong> OCULOS-RETRO-2026</p>
+                                <p><strong>Descrição:</strong> Óculos vintage retrô em 5 estilos diferentes: cat eye, hexagonal, oval, quadrado e redondo. Lentes com proteção UV400.</p>
+                                <p><strong>Potencial mensal:</strong> 120-160 unidades</p>
+                                <p><strong>Preço estimado:</strong> R$ 35-55</p>
+                                <p><strong>Estratégia:</strong> Diferentes estilos atraem múltiplos públicos</p>
+                            </div>
+                        </div>
+
+                        <div class="expansion-panel">
+                            <div class="expansion-header" onclick="toggleExpansion(this)">
+                                <span>4️⃣ Escorredor de Macarrão/Peneira</span>
+                                <span class="expansion-arrow">▼</span>
+                            </div>
+                            <div class="expansion-content">
+                                <p><strong>Categoria:</strong> Cozinha &amp; Utensílios</p>
+                                <p><strong>SKU:</strong> ESCORR-MACAR-2026</p>
+                                <p><strong>Descrição:</strong> Escorredor de macarrão com furos ajustáveis e alças reforçadas, aço inox, fácil limpeza.</p>
+                                <p><strong>Potencial mensal:</strong> 180-220 unidades</p>
+                                <p><strong>Preço estimado:</strong> R$ 25-45</p>
+                                <p><strong>Estratégia:</strong> Baixo preço, alto volume</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ABRIL, MAIO, JUNHO (RESUMIDOS) -->
+            <div class="accordion-item" style="margin-bottom: 20px; border: 2px solid #667eea;">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>🎯 Abril 2026 - Frete Grátis &amp; Oferta</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div style="padding: 20px;">
+                        <p><strong>Meta:</strong> R$ 30.000 | <strong>Novos SKUs:</strong> 4</p>
+                        <h4 style="color: #764ba2; margin: 20px 0 15px 0;">📦 Produtos para Lançar:</h4>
+                        <ul style="list-style: disc; padding-left: 20px;">
+                            <li>Mochila Kids Personalizável (abrir espaço para crianças)</li>
+                            <li>Conjunto de Utensílios de Cozinha 12 peças</li>
+                            <li>Óculos Infantil Proteção UV</li>
+                        </ul>
+                        <h4 style="color: #764ba2; margin: 20px 0 15px 0;">🎯 Estratégia:</h4>
+                        <p>Promoção "Frete Grátis" para estimular compras médias. Focar em combos e kits.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item" style="margin-bottom: 20px; border: 2px solid #667eea;">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>🎯 Maio 2026 - Dia das Mães</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div style="padding: 20px;">
+                        <p><strong>Meta:</strong> R$ 40.000 | <strong>Novos SKUs:</strong> 4</p>
+                        <h4 style="color: #764ba2; margin: 20px 0 15px 0;">🎁 Produtos para Lançar/Destaque:</h4>
+                        <ul style="list-style: disc; padding-left: 20px;">
+                            <li>Mochila Premium Presente (embalagem especial)</li>
+                            <li>Conjunto Cozinha Deluxe (14 peças - presente perfeito)</li>
+                            <li>Óculos de Sol Premium Polarizados</li>
+                        </ul>
+                        <h4 style="color: #764ba2; margin: 20px 0 15px 0;">🎯 Estratégia:</h4>
+                        <p>Focar em presentes para mães. Embalagem especial. Destaque mochilas femininas premium + sets de cozinha.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item" style="margin-bottom: 20px; border: 2px solid #667eea;">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>🎯 Junho 2026 - Inverno &amp; Namorados</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div style="padding: 20px;">
+                        <p><strong>Meta:</strong> R$ 32.500 | <strong>Novos SKUs:</strong> 4</p>
+                        <h4 style="color: #764ba2; margin: 20px 0 15px 0;">❄️ Produtos para Lançar/Destaque:</h4>
+                        <ul style="list-style: disc; padding-left: 20px;">
+                            <li>Mochila Inverno com Forro Térmico</li>
+                            <li>Amolador de Facas Manual (preparar cozinha para inverno)</li>
+                            <li>Óculos de Proteção Laboratorial/Esportivo</li>
+                        </ul>
+                        <h4 style="color: #764ba2; margin: 20px 0 15px 0;">🎯 Estratégia:</h4>
+                        <p>Posicionar mochilas para clima frio. Aquecimento de utilidades de cozinha. Presentes para namorado/a.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEMESTRE 2 -->
+        <div id="semestre2" class="tab-content">
+            <h3 style="color: #667eea; margin-bottom: 20px;">📅 Semestre 2: Ferramentas, Camping &amp; Pico</h3>
+
+            <div class="accordion-item" style="margin-bottom: 20px; border: 2px solid #27ae60;">
+                <div class="accordion-header" onclick="toggleAccordion(this)" style="background: linear-gradient(135deg, #27ae60 0%, #229954 100%);">
+                    <span>🎯 Julho 2026 ⭐ CHECKPOINT - Inverno + Ferramentas</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div style="padding: 20px;">
+                        <div class="comparison-card" style="margin-bottom: 20px; background: #f0fdf4;">
+                            <h3>Meta Julho 2026 (CRÍTICA)</h3>
+                            <div class="comparison-item">
+                                <strong>Faturamento</strong>
+                                <span style="color: #27ae60;">R$ 50.000</span>
+                            </div>
+                            <div class="comparison-item">
+                                <strong>Pedidos esperados</strong>
+                                <span>905 unidades</span>
+                            </div>
+                            <div class="comparison-item">
+                                <strong>Novos SKUs</strong>
+                                <span>4 lançamentos</span>
+                            </div>
+                            <div class="comparison-item">
+                                <strong>Investimento ADS</strong>
+                                <span>R$ 2.500</span>
+                            </div>
+                            <div class="comparison-item">
+                                <strong>Full ML Esperado</strong>
+                                <span style="color: #27ae60;">70% catálogo</span>
+                            </div>
+                        </div>
+
+                        <h4 style="color: #764ba2; margin: 20px 0 15px 0;">📦 Produtos para Lançar em Julho:</h4>
+                        <div class="expansion-panel">
+                            <div class="expansion-header" onclick="toggleExpansion(this)">
+                                <span>1️⃣ Kit Ferramentas Básico 16 Peças</span>
+                                <span class="expansion-arrow">▼</span>
+                            </div>
+                            <div class="expansion-content">
+                                <p><strong>Categoria:</strong> Ferramentas &amp; Acessórios</p>
+                                <p><strong>SKU:</strong> KIT-FERRAM16-2026</p>
+                                <p><strong>Descrição:</strong> Kit completo com 16 ferramentas essenciais: martelo, chaves, chave de fenda, alicate, fita métrica, nível, etc. Mala de armazenamento inclusa.</p>
+                                <p><strong>Potencial mensal:</strong> 200-250 unidades</p>
+                                <p><strong>Preço estimado:</strong> R$ 85-140</p>
+                                <p><strong>Estratégia:</strong> NOVO SEGMENTO - Ferramentas | Alto volume esperado | Presente perfeito Dia dos Pais (Aug)</p>
+                                <p><strong>Ações críticas:</strong></p>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>✓ Full ML desde dia 1</li>
+                                    <li>✓ Vídeo mostrando todas as ferramentas</li>
+                                    <li>✓ Destaque: "Tudo em um kit"</li>
+                                    <li>✓ Campanha ADS agressiva: "Ferramentas completas"</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="expansion-panel">
+                            <div class="expansion-header" onclick="toggleExpansion(this)">
+                                <span>2️⃣ Mochila de Camping 50L</span>
+                                <span class="expansion-arrow">▼</span>
+                            </div>
+                            <div class="expansion-content">
+                                <p><strong>Categoria:</strong> Camping &amp; Outdoor</p>
+                                <p><strong>SKU:</strong> MOCHCAMP50L-2026</p>
+                                <p><strong>Descrição:</strong> Mochila de camping 50L, impermeável, com suporte para tenda, muitos compartimentos, alças ergonômicas, perfeita para trilhas e viagens.</p>
+                                <p><strong>Potencial mensal:</strong> 120-150 unidades</p>
+                                <p><strong>Preço estimado:</strong> R$ 140-200</p>
+                                <p><strong>Estratégia:</strong> NOVO SEGMENTO - Camping | Inverno é temporada de trilhas</p>
+                            </div>
+                        </div>
+
+                        <div class="expansion-panel">
+                            <div class="expansion-header" onclick="toggleExpansion(this)">
+                                <span>3️⃣ Lanterna LED Recarregável</span>
+                                <span class="expansion-arrow">▼</span>
+                            </div>
+                            <div class="expansion-content">
+                                <p><strong>Categoria:</strong> Camping &amp; Outdoor</p>
+                                <p><strong>SKU:</strong> LANTERNA-LED-RECA-2026</p>
+                                <p><strong>Descrição:</strong> Lanterna LED potente recarregável via USB, 3 modos de iluminação, bateria durável até 20h, perfeita para camping e emergências.</p>
+                                <p><strong>Potencial mensal:</strong> 200-250 unidades</p>
+                                <p><strong>Preço estimado:</strong> R$ 35-60</p>
+                                <p><strong>Estratégia:</strong> Complemento para camping | Alto volume esperado | Preço acessível</p>
+                            </div>
+                        </div>
+
+                        <div class="expansion-panel">
+                            <div class="expansion-header" onclick="toggleExpansion(this)">
+                                <span>4️⃣ Chave de Fenda Ajustável Premium</span>
+                                <span class="expansion-arrow">▼</span>
+                            </div>
+                            <div class="expansion-content">
+                                <p><strong>Categoria:</strong> Ferramentas &amp; Acessórios</p>
+                                <p><strong>SKU:</strong> CHAVFENDA-PREM-2026</p>
+                                <p><strong>Descrição:</strong> Chave de fenda multifuncional com 8 pontas intercambiáveis, cabo ergonômico, aço temperado, profissional.</p>
+                                <p><strong>Potencial mensal:</strong> 150-180 unidades</p>
+                                <p><strong>Preço estimado:</strong> R$ 35-55</p>
+                                <p><strong>Estratégia:</strong> Cross-sell com kit de ferramentas | Segmento complementar</p>
+                            </div>
+                        </div>
+
+                        <h4 style="color: #764ba2; margin: 20px 0 15px 0;">🎯 Estratégia de Marketing Julho:</h4>
+                        <div class="action-box" style="background: #f0fdf4; border-left-color: #27ae60;">
+                            <ul>
+                                <li><strong>META CRÍTICA:</strong> Atingir R$ 50k para validar crescimento anual</li>
+                                <li>Campanha agressiva em ADS: "Ferramentas completas" + "Camping preparado"</li>
+                                <li>Full ML deve estar em 70% do catálogo (validação operacional)</li>
+                                <li>Budget ADS: R$ 2.500 | ROAS mínimo: 20x (pode exceder se lucrativo)</li>
+                                <li>Monitoramento diário de performance</li>
+                                <li>Se não atingir 70% em 25/07: plano de contingência ativado</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AGOSTO -->
+            <div class="accordion-item" style="margin-bottom: 20px; border: 2px solid #667eea;">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>🎯 Agosto 2026 - Dia dos Pais + Ferramentas Pico</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div style="padding: 20px;">
+                        <p><strong>Meta:</strong> R$ 60.000 (maior de S2) | <strong>Novos SKUs:</strong> 5</p>
+                        <h4 style="color: #764ba2; margin: 20px 0 15px 0;">📦 Produtos para Lançar/Destaque:</h4>
+                        <ul style="list-style: disc; padding-left: 20px;">
+                            <li><strong>Alicate Multiuso Profissional (3 tipos)</strong> - Presente Dia dos Pais</li>
+                            <li><strong>Saco de Dormir Térmico</strong> - Inverno + camping</li>
+                            <li><strong>Mochila Térmica para Delivery</strong> - Novo segmento (food delivery)</li>
+                            <li><strong>Óculos Proteção Laboratorial</strong></li>
+                            <li><strong>Chave Inglesa Ajustável Aço</strong></li>
+                        </ul>
+                        <h4 style="color: #764ba2; margin: 20px 0 15px 0;">🎯 Estratégia:</h4>
+                        <div class="action-box">
+                            <ul>
+                                <li>Dia dos Pais: Destaque ferramentas + camping + mochilas</li>
+                                <li>Promoção: "Kit Presente Dia dos Pais" (ferramenta + mochila)</li>
+                                <li>Camping: Saco de dormir + lanterna + mochila</li>
+                                <li>Novo: Mochila delivery (B2B potencial)</li>
+                                <li>Budget ADS: R$ 3.000 | ROAS mínimo: 20x</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SETEMBRO -->
+            <div class="accordion-item" style="margin-bottom: 20px; border: 2px solid #667eea;">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>🎯 Setembro 2026 - Camping + Cliente</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div style="padding: 20px;">
+                        <p><strong>Meta:</strong> R$ 50.000 | <strong>Novos SKUs:</strong> 4</p>
+                        <h4 style="color: #764ba2; margin: 20px 0 15px 0;">📦 Produtos para Lançar/Destaque:</h4>
+                        <ul style="list-style: disc; padding-left: 20px;">
+                            <li><strong>Barraca Camping 2 Pessoas Impermeável</strong> - Inverno finalizando</li>
+                            <li><strong>Mangueira Mágica 25m Premium</strong> - Melhorado vs 2025</li>
+                            <li><strong>Cortador de Alimentos Ajustável</strong> - Cozinha continuada</li>
+                            <li><strong>Óculos Proteção Esportivo</strong></li>
+                        </ul>
+                        <h4 style="color: #764ba2; margin: 20px 0 15px 0;">🎯 Estratégia:</h4>
+                        <p>Continuar crescimento de camping. Finalizar inverno. Preparar para primavera/verão.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OUTUBRO -->
+            <div class="accordion-item" style="margin-bottom: 20px; border: 2px solid #667eea;">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>🎯 Outubro 2026 - Crianças + Brinquedos (Preparação Natal)</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div style="padding: 20px;">
+                        <p><strong>Meta:</strong> R$ 45.000 | <strong>Novos SKUs:</strong> 4</p>
+                        <h4 style="color: #764ba2; margin: 20px 0 15px 0;">📦 Produtos para Lançar/Destaque:</h4>
+                        <ul style="list-style: disc; padding-left: 20px;">
+                            <li><strong>Brinquedo Educativo STEM</strong> - Início campanhaatal</li>
+                            <li><strong>Bola de Borracha Colorida (6 tamanhos)</strong> - Crianças</li>
+                            <li><strong>Kit Piquenique Completo</strong> - Primavera/verão chegando</li>
+                            <li><strong>Corda Reforçada Multiuso 50m</strong> - Camping + outdoor</li>
+                        </ul>
+                        <h4 style="color: #764ba2; margin: 20px 0 15px 0;">🎯 Estratégia:</h4>
+                        <p>Preparar para Natal com brinquedos. Começar campanhas de presentes. Halloween como ponte.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NOVEMBRO -->
+            <div class="accordion-item" style="margin-bottom: 20px; border: 2px solid #f39c12;">
+                <div class="accordion-header" onclick="toggleAccordion(this)" style="background: linear-gradient(135deg, #f39c12 0%, #d68910 100%);">
+                    <span>🎯 Novembro 2026 - Black Friday (Opportunity)</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div style="padding: 20px;">
+                        <p><strong>Meta:</strong> R$ 70.000 | <strong>Novos SKUs:</strong> 4</p>
+                        <h4 style="color: #764ba2; margin: 20px 0 15px 0;">📦 Produtos para Lançar/Destaque:</h4>
+                        <ul style="list-style: disc; padding-left: 20px;">
+                            <li><strong>Quebra-Cabeça Infantil 3D (4 níveis)</strong> - Presentes</li>
+                            <li><strong>Carrinho de Brinquedo Friction (5 modelos)</strong> - Presentes crianças</li>
+                            <li><strong>Kit Broca Parede/Metal (50 peças)</strong> - Black Friday ferramentas</li>
+                            <li><strong>Outros best sellers com desconto</strong> - Estratégia agressiva</li>
+                        </ul>
+                        <h4 style="color: #764ba2; margin: 20px 0 15px 0;">🎯 Estratégia BLACK FRIDAY:</h4>
+                        <div class="action-box" style="background: #fffbf0; border-left-color: #f39c12;">
+                            <ul>
+                                <li><strong>META AGRESSIVA:</strong> R$ 70.000 (maior de S2 até agora)</li>
+                                <li>Descontos de 10-20% nos products best-sellers</li>
+                                <li>Bundles: Kit ferramentas + mochila + lanterna = -25%</li>
+                                <li>Brinquedos com frete grátis</li>
+                                <li>Budget ADS: R$ 3.500 | Sem limite de investimento se ROAS &gt;20x</li>
+                                <li>Estoque máximo: validar estoque de todos os SKUs</li>
+                                <li>Antecipação: Começar promoções "Early Bird" em 01/11</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DEZEMBRO -->
+            <div class="accordion-item" style="margin-bottom: 20px; border: 2px solid #c0392b;">
+                <div class="accordion-header" onclick="toggleAccordion(this)" style="background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);">
+                    <span>🎯 Dezembro 2026 ⭐ PICO - Natal + Verão</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div style="padding: 20px;">
+                        <div class="comparison-card" style="margin-bottom: 20px; background: #fef2f2;">
+                            <h3>Meta Dezembro 2026 (PICO ESPERADO)</h3>
+                            <div class="comparison-item">
+                                <strong>Faturamento</strong>
+                                <span style="color: #c0392b;">R$ 90.000</span>
+                            </div>
+                            <div class="comparison-item">
+                                <strong>Pedidos esperados</strong>
+                                <span>1.550 unidades</span>
+                            </div>
+                            <div class="comparison-item">
+                                <strong>Novos SKUs</strong>
+                                <span>3 lançamentos</span>
+                            </div>
+                            <div class="comparison-item">
+                                <strong>Investimento ADS</strong>
+                                <span>R$ 4.500</span>
+                            </div>
+                        </div>
+
+                        <h4 style="color: #764ba2; margin: 20px 0 15px 0;">📦 Produtos para Lançar/Destaque em Dezembro:</h4>
+                        <div class="expansion-panel">
+                            <div class="expansion-header" onclick="toggleExpansion(this)">
+                                <span>1️⃣ Jogo de Tabuleiro Família (4+ players)</span>
+                                <span class="expansion-arrow">▼</span>
+                            </div>
+                            <div class="expansion-content">
+                                <p><strong>Categoria:</strong> Brinquedos &amp; Infantil</p>
+                                <p><strong>Potencial mensal:</strong> 120-160 unidades</p>
+                                <p><strong>Preço estimado:</strong> R$ 45-75</p>
+                                <p><strong>Estratégia:</strong> Presente Natal perfeito para famílias | Alto valor agregado</p>
+                            </div>
+                        </div>
+
+                        <div class="expansion-panel">
+                            <div class="expansion-header" onclick="toggleExpansion(this)">
+                                <span>2️⃣ Mochila de Viagem com Rodas</span>
+                                <span class="expansion-arrow">▼</span>
+                            </div>
+                            <div class="expansion-content">
+                                <p><strong>Categoria:</strong> Mochilas &amp; Bolsas</p>
+                                <p><strong>Potencial mensal:</strong> 90-120 unidades</p>
+                                <p><strong>Preço estimado:</strong> R$ 180-250</p>
+                                <p><strong>Estratégia:</strong> Viagens de férias | Alto ticket</p>
+                            </div>
+                        </div>
+
+                        <div class="expansion-panel">
+                            <div class="expansion-header" onclick="toggleExpansion(this)">
+                                <span>3️⃣ Mochila Térmica Camping Insulated</span>
+                                <span class="expansion-arrow">▼</span>
+                            </div>
+                            <div class="expansion-content">
+                                <p><strong>Categoria:</strong> Camping &amp; Outdoor</p>
+                                <p><strong>Potencial mensal:</strong> 140-180 unidades</p>
+                                <p><strong>Preço estimado:</strong> R$ 95-140</p>
+                                <p><strong>Estratégia:</strong> Camping + picnic de verão | Verão chegando</p>
+                            </div>
+                        </div>
+
+                        <h4 style="color: #764ba2; margin: 20px 0 15px 0;">🎯 Estratégia de Marketing DEZEMBRO (PICO):</h4>
+                        <div class="action-box" style="background: #fef2f2; border-left-color: #c0392b;">
+                            <ul>
+                                <li><strong>META MÁXIMA:</strong> R$ 90.000 = melhor mês do ano</li>
+                                <li><strong>Temas:</strong> Natal + Presentes + Férias + Verão</li>
+                                <li>Campanhas temáticas: "Presentes de Natal" | "Prepare suas férias" | "Verão chegando"</li>
+                                <li>Todos os produtos em destaque: brinquedos, mochilas, camping, ferramentas</li>
+                                <li>Promoções: Frete grátis acima de R$ 100 | Desconto 15% em kits</li>
+                                <li>Budget ADS: R$ 4.500 | SEM limite se ROAS &gt;20x (expectativa 25x+)</li>
+                                <li>Estoque MÁXIMO: Este é o mês que tudo sai</li>
+                                <li>Antecipação: Começar "Promoção de Natal" em 01/11</li>
+                                <li>Coordenação: Confirmar estoque de todos SKUs até 15/11</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEÇÃO 4: RESUMO ESTOQUE & GESTÃO -->
+    <div class="page-break"></div>
+    <div class="section-title">4. Gestão de Estoque e Reabastecimento</div>
+
+    <div class="table-container">
+        <h3 style="margin-bottom: 20px; color: #667eea;">Produtos Best Sellers - Plano de Reabastecimento 2026</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th class="text-right">Vendas 2025</th>
+                    <th class="text-right">Meta 2026 (Manter)</th>
+                    <th>Estratégia 2026</th>
+                    <th>Frequência Reabastecimento</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Ralador/Descascador Aço (2 SKUs)</strong></td>
+                    <td class="text-right">1.612 un.</td>
+                    <td class="text-right">1.500-1.800 un.</td>
+                    <td>Manter volume | Expandir variantes</td>
+                    <td>Semanal (estoque crítico)</td>
+                </tr>
+                <tr>
+                    <td><strong>Mochila Reforçada Multiuso (3 SKUs)</strong></td>
+                    <td class="text-right">1.276 un.</td>
+                    <td class="text-right">1.200-1.500 un.</td>
+                    <td>Manter volume | Adicionar cores</td>
+                    <td>Quinzenal (produto consistente)</td>
+                </tr>
+                <tr>
+                    <td><strong>Mangueira Mágica Retrátil</strong></td>
+                    <td class="text-right">164 un.</td>
+                    <td class="text-right">150-200 un.</td>
+                    <td>Manter | Versão 25m</td>
+                    <td>Mensal (estoque pequeno)</td>
+                </tr>
+                <tr>
+                    <td><strong>Óculos Polarizados Juliet</strong></td>
+                    <td class="text-right">184 un.</td>
+                    <td class="text-right">150-180 un.</td>
+                    <td>Manter | Expandir estilos</td>
+                    <td>Mensal (niche product)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-container">
+        <h3 style="margin-bottom: 20px; color: #667eea;">Novos Produtos - Plano Inicial de Estoque</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>SKU Novo</th>
+                    <th>Mês Lançamento</th>
+                    <th>Estoque Inicial Recomendado</th>
+                    <th>Objetivo Mensal</th>
+                    <th>Ponto de Reabastecimento</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Mochila Feminina Premium</strong></td>
+                    <td>Janeiro</td>
+                    <td>300-400 un.</td>
+                    <td>180-220 un./mês</td>
+                    <td>Quando &lt;50 un. restantes</td>
+                </tr>
+                <tr>
+                    <td><strong>Kit Descascadores 3 Peças</strong></td>
+                    <td>Janeiro</td>
+                    <td>500-600 un.</td>
+                    <td>300-400 un./mês</td>
+                    <td>Semanal (alto giro)</td>
+                </tr>
+                <tr>
+                    <td><strong>Óculos Aviador Clássico</strong></td>
+                    <td>Janeiro</td>
+                    <td>250-350 un.</td>
+                    <td>150-200 un./mês</td>
+                    <td>Quando &lt;30 un. restantes</td>
+                </tr>
+                <tr>
+                    <td><strong>Kit Ferramentas 16 Peças</strong></td>
+                    <td>Julho</td>
+                    <td>400-500 un.</td>
+                    <td>200-250 un./mês</td>
+                    <td>Quinzenal (alto giro S2)</td>
+                </tr>
+                <tr>
+                    <td><strong>Lanterna LED Recarregável</strong></td>
+                    <td>Julho</td>
+                    <td>400-500 un.</td>
+                    <td>200-250 un./mês</td>
+                    <td>Semanal (verão/camping)</td>
+                </tr>
+                <tr>
+                    <td><strong>Mochila Camping 50L</strong></td>
+                    <td>Julho</td>
+                    <td>200-300 un.</td>
+                    <td>120-150 un./mês</td>
+                    <td>Quinzenal (high value)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SEÇÃO 5: KPIs E MONITORAMENTO -->
+    <div class="page-break"></div>
+    <div class="section-title">5. KPIs de Produtos &amp; Monitoramento</div>
+
+    <div class="comparison-grid">
+        <div class="comparison-card">
+            <h3>📊 KPIs Mensais por Categoria</h3>
+            <div class="comparison-item">
+                <strong>Cozinha &amp; Utensílios</strong>
+                <span>Meta: 25-30% do faturamento</span>
+            </div>
+            <div class="comparison-item">
+                <strong>Mochilas &amp; Bolsas</strong>
+                <span>Meta: 20-25% do faturamento</span>
+            </div>
+            <div class="comparison-item">
+                <strong>Óculos de Sol</strong>
+                <span>Meta: 8-12% do faturamento</span>
+            </div>
+            <div class="comparison-item">
+                <strong>Ferramentas (Jul-Dez)</strong>
+                <span>Meta: 20-25% do faturamento S2</span>
+            </div>
+            <div class="comparison-item">
+                <strong>Camping (Jul-Dez)</strong>
+                <span>Meta: 10-15% do faturamento S2</span>
+            </div>
+            <div class="comparison-item">
+                <strong>Brinquedos (Out-Dez)</strong>
+                <span>Meta: 8-10% do faturamento Q4</span>
+            </div>
+        </div>
+
+        <div class="comparison-card">
+            <h3>⚠️ Indicadores de Alerta</h3>
+            <div class="comparison-item">
+                <strong>SKU parado &gt;30 dias</strong>
+                <span style="color: #e74c3c;">Ação: revisar</span>
+            </div>
+            <div class="comparison-item">
+                <strong>Concentração &gt;25% um item</strong>
+                <span style="color: #e74c3c;">Ação: ativar novos</span>
+            </div>
+            <div class="comparison-item">
+                <strong>Novo SKU &lt;50% meta mês 1</strong>
+                <span style="color: #e74c3c;">Ação: otimizar ADS</span>
+            </div>
+            <div class="comparison-item">
+                <strong>Novo SKU &lt;30% meta mês 2</strong>
+                <span style="color: #c0392b;">Ação: pausar lançamento</span>
+            </div>
+            <div class="comparison-item">
+                <strong>Categoria performance &lt; 80%</strong>
+                <span style="color: #e74c3c;">Ação: revisar preços</span>
+            </div>
+            <div class="comparison-item">
+                <strong>Taxa retorno &gt; 5%</strong>
+                <span style="color: #c0392b;">Ação: qualidade check</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="action-box">
+        <h4>📋 Checklist Mensal de Gestão de Produtos</h4>
+        <ul>
+            <li>[ ] Verificar desempenho de cada SKU vs meta mensal (até dia 5)</li>
+            <li>[ ] Revisar novos produtos lançados: performance vs expectativa (até dia 10)</li>
+            <li>[ ] Avaliar estoque de best-sellers: reabastecimento necessário? (até dia 8)</li>
+            <li>[ ] Análise de concentração: algum SKU &gt;20%? (até dia 15)</li>
+            <li>[ ] Produtos parados &gt;20 dias: ativar ADS? (até dia 20)</li>
+            <li>[ ] Feedback de clientes: problemas recorrentes? (contínuo)</li>
+            <li>[ ] Planejamento próximo mês: confirmar lançamentos (até dia 25)</li>
+            <li>[ ] Auditoria de preços: competitivos? (até dia 28)</li>
+        </ul>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><strong>IG Imports | Estratégia de Produtos 2026 - Versão Final</strong></p>
+        <p>Planejamento detalhado mês a mês com 48 novos SKUs | Acorde interativo com submenu</p>
+        <p>Consultor: Harpiadesk Consultoria | Responsável: Abner</p>
+    </footer>
+</div>
+
+<!-- SCRIPTS -->
+<script>
+    function toggleAccordion(header) {
+        const content = header.nextElementSibling;
+        content.classList.toggle('active');
+        header.classList.toggle('active');
+    }
+
+    function toggleExpansion(header) {
+        const content = header.nextElementSibling;
+        content.classList.toggle('active');
+        header.classList.toggle('active');
+    }
+
+    function switchTab(event, tabName) {
+        // Hide all tabs
+        const tabs = document.querySelectorAll('.tab-content');
+        tabs.forEach(tab => tab.classList.remove('active'));
+
+        // Remove active class from all buttons
+        const buttons = document.querySelectorAll('.tab-button');
+        buttons.forEach(btn => btn.classList.remove('active'));
+
+        // Show selected tab
+        document.getElementById(tabName).classList.add('active');
+
+        // Add active class to clicked button
+        event.target.classList.add('active');
+    }
+
+    // Fechar accordion ao expandir outro (opcional)
+    document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('accordion-header')) {
+            const parent = event.target.closest('.accordion-item');
+            if (parent) {
+                // Apenas este accordion se abre, os outros não fecham
+                // Se quiser que apenas um fique aberto por vez, descomente:
+                // const siblings = parent.parentElement.querySelectorAll('.accordion-item');
+                // siblings.forEach(sibling => {
+                //     if (sibling !== parent) {
+                //         sibling.querySelector('.accordion-content').classList.remove('active');
+                //         sibling.querySelector('.accordion-header').classList.remove('active');
+                //     }
+                // });
+            }
+        }
+    });
+</script>
+
+
+</body></html>
